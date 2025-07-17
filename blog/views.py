@@ -5,5 +5,5 @@ from .models import Post
 
 # Create your views here.
 class PostList(generic.ListView):
-    def get_queryset(self):
-        return Post.objects.all()
+    queryset = Post.objects.filter(status=1)
+    template = "post_list.html"
